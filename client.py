@@ -15,7 +15,7 @@ class SteveBannonClient(object):
 
 	@staticmethod
 	def send_message_to_all_people(text):
-		all_dialogs = get_all_users()
+		all_dialogs = get_all_dialogs()
 		all_users = get_all_users(all_dialogs)
 		all_users = remove_all_bots(all_users)
 		for user in all_users:
@@ -26,7 +26,7 @@ class SteveBannonClient(object):
 		all_dialogs = get_all_dialogs()
 		all_groups = get_all_groups(all_dialogs)
 		all_groups = [group.id for group in all_groups]
-		end_image(all_groups, path_to_image, caption)
+		send_image(all_groups, path_to_image, caption)
 
 	@staticmethod
 	def send_image_to_all_people(path_to_image, caption=None):
